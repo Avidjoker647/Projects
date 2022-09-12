@@ -1,6 +1,7 @@
 package Project1;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Calculator {
 
@@ -29,8 +30,7 @@ public class Calculator {
 
         while (validNumber == false) {
             if (scannedInput.hasNext("pi")) {
-                // TODO: make this a constant instead of 3.1: ROUGLY_PI to five decimal places.
-                userVal = 3.1;
+                userVal = 3.14159;
                 scannedInput.next();
                 validNumber = true;
             } else if (scannedInput.hasNextDouble()) {
@@ -77,19 +77,19 @@ public class Calculator {
                 subtract(num);
                 break;
             case "*":
-                // TODO: code in this functionality
+                multiply(num);
                 break;
             case "/":
-                // TODO: code in this functionality
+                divide(num);
                 break;
             case "c":
-                // TODO: code in this functionality
+                clear();
                 break;
             case "neg":
-                // TODO: code in this functionality
+                negative();
                 break;
             case "%":
-                // TODO: code in this functionality
+                percent();
                 break;
             case "^":
                 // TODO: code in this functionality
@@ -118,9 +118,23 @@ public class Calculator {
     public void add(double operand) {
         this.answer += operand;
     }
-
+    public void multiply(double operand){
+        this.answer *= operand;
+    }
+    public void clear(){
+        this.answer = 0;
+    }
+    public void divide(double operand){
+        this.answer /= operand;
+    }
     public void subtract(double operand) {
         this.answer -= operand;
+    }
+    public void negative(){
+        this.answer *= -1;
+    }
+    public void percent(){
+        this.answer /= 100;
     }
 
     public double getAnswer() {
@@ -131,7 +145,7 @@ public class Calculator {
         // https://www.homeandlearn.co.uk/java/java_formatted_strings.html
 
         // TODO: right justify the output (position 15 used in example)
-        System.out.println("TODO... FORMAT THIS: " + this.answer);
+        System.out.println("\n \n \n"+ this.answer + "\n\n\n");
 
 
     }
